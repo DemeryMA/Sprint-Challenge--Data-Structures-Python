@@ -20,6 +20,14 @@ class LinkedList:
     # reference to the head of the list
     self.head = None
 
+  def print(self):
+    curr_node = self.head
+    print('------HEAD------')
+    while curr_node is not None:
+      print(curr_node.value)
+      curr_node = curr_node.next
+      print('---------')
+
   def add_to_head(self, value):
     node = Node(value)
     if self.head is not None:
@@ -44,4 +52,32 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    pass
+    # curr = self.head
+    # new = curr.next
+    # curr.next = None
+    # prev = None
+    # while new is not None:
+    #   prev = curr
+    #   curr = new
+    #   new = curr.next
+    #   curr.next = prev
+    #   self.head = curr
+
+      previous = None
+      current = self.head 
+      while(current is not None): 
+        next = current.next_node
+        current.next_node = previous
+        previous = current 
+        current = next
+        self.head = previous
+
+
+      # ll = LinkedList()
+      # ll.add_to_head(1)
+      # ll.add_to_head(2)
+      # ll.add_to_head(3)
+      # ll.add_to_head(4)
+      # ll.print()
+      # reverse_list.print(ll)
+      # ll.print()
